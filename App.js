@@ -1,21 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import * as comp from "./components/components.js"
+
+
+
+
 export default function App() {
+  const [refresh, setRefresh] = useState(0);
+
+  function refreshFunc(e) {
+    console.log(refresh + 1)
+    setRefresh(refresh + 1);
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <comp.Background>
       <StatusBar style="auto" />
-    </View>
+      <comp.Header />
+      <comp.CurrentSentiment />
+      <comp.RefreshButton refresh={refreshFunc}/>
+    </comp.Background>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
