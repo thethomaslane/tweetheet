@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import AppLoading from 'expo-app-loading';
 
 import {styles} from '../styles/styles.js';
+import s3 from "aws";
 
 
 import {
@@ -74,7 +75,7 @@ class ContentBox extends React.Component {
 
 export class CurrentSentiment extends React.Component {
   render() {
-    score = Math.abs(Math.cos(Date.now()/1000000))
+    var score = s3.getObject(process.env.BUCKET, process.env.AWS_ID, process.env.AWS_KEY).getAttribute("score");
     return (
       <ContentBox contentTitle={"Current Twitter Sentiment"}>
         <SplitHalves left={<Thermometer score={score}/>} right={<ThermText score={score}/>}/>
