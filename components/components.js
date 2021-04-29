@@ -74,7 +74,7 @@ class ContentBox extends React.Component {
 
 export class CurrentSentiment extends React.Component {
   render() {
-    score = Math.abs(Math.cos(Date.now()/1000000))
+    var score = Math.abs(Math.cos(Date.now()/1000000))
     return (
       <ContentBox contentTitle={"Current Twitter Sentiment"}>
         <SplitHalves left={<Thermometer score={score}/>} right={<ThermText score={score}/>}/>
@@ -183,7 +183,7 @@ export class RefreshButton extends React.Component {
         ]}>
         <StyledText styling={[styles.refreshText, styles.textShadow]} text="Refresh" color={"#FFE769"} />
       </Pressable>
-      {this.state.loading && <Text style={{top:50}} >Updated!</Text>}
+      {this.state.loading && <Text style={{marginTop:50}} >Updated!</Text>}
       </>
     )
   }

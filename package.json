@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@expo-google-fonts/josefin-sans": "^0.1.0",
-    "@expo/next-adapter": "^2.1.69",
     "expo": "~41.0.0",
     "expo-app-loading": "^1.0.3",
     "expo-font": "~9.1.0",
@@ -20,8 +19,7 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
     "react-native-restart": "0.0.22",
-    "react-native-web": "~0.13.12",
-    "undefined": "@expo-google-fonts/josefin+sans"
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
